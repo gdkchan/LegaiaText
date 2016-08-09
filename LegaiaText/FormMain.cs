@@ -1,6 +1,7 @@
 ﻿using LegaiaText.Legaia;
 
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -8,7 +9,7 @@ namespace LegaiaText
 {
     public partial class FormMain : Form
     {
-        const string Version = "0.1";
+        const string Version = "0.2";
 
         LProt Prot;
 
@@ -21,6 +22,14 @@ namespace LegaiaText
             InitializeComponent();
 
             Text = "LegaiaText v" + Version;
+
+            TextEdit.ForeColor = Color.Silver;
+
+            TextEdit.AddHighlight(new HighlightParams("\\{TEXT\\}(.+?)\\{END\\}", Color.Black));
+            TextEdit.AddHighlight(new HighlightParams("(\\\\x[0-9A-Fa-f]{2})", Color.Gray));
+
+            //Needs to do this cause this shit is screwed
+            TextEdit.AutoWordSelection = false;
         }
 
         private void MenuOpen_Click(object sender, EventArgs e)
@@ -390,6 +399,11 @@ namespace LegaiaText
         private void TextEdit_TextChanged(object sender, EventArgs e)
         {
             HasNewText = true;
+        }
+
+        private void TextEdit_SelectionChanged(object sender, EventArgs e)
+        {
+            LabelSel.Text = string.Format("SEL: {0,4}", TextEdit.SelectionLength);
         }
 
         private void ShowStatus(string Status)

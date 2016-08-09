@@ -4,6 +4,7 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace LegaiaText.Legaia
 {
@@ -67,7 +68,7 @@ namespace LegaiaText.Legaia
             {
                 for (int Index = 0; Index < Text.Length; Index++)
                 {
-                    if (Index + 2 <= Text.Length && Text.Substring(Index, 2) == "\\x")
+                    if (Index + 4 <= Text.Length && Regex.IsMatch(Text.Substring(Index, 4), "\\\\x[0-9A-Fa-f]{2}"))
                     {
                         //Unknown data = Hex code
                         string Hex = Text.Substring(Index + 2, 2);

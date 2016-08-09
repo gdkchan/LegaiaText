@@ -106,7 +106,7 @@ namespace LegaiaText.Legaia.Compression
                         {
                             int Value;
 
-                            Value = Data[SrcAddr + 0] << 8;
+                            Value  = Data[SrcAddr + 0] << 8;
                             Value |= Data[SrcAddr + 1] << 0;
 
                             LookUp[Value] <<= 12;
@@ -155,7 +155,7 @@ namespace LegaiaText.Legaia.Compression
                 {
                     int Value;
 
-                    Value = Data[InputAddr++] << 0;
+                    Value  = Data[InputAddr++] << 0;
                     Value |= Data[InputAddr++] << 8;
 
                     int Length = ((Value >> 8) & 0xf) + 3;

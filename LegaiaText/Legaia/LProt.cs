@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace LegaiaText.Legaia
 {
@@ -53,7 +48,7 @@ namespace LegaiaText.Legaia
 
                 uint DataAddress = (uint)(8 + Prot.Files.Length * 4 + 4);
                 
-                //Align to 8K boundary
+                //Align to 2K boundary
                 DataAddress = (DataAddress + 0x800) & ~0x7ffu;
 
                 for (int i = 0; i < Prot.Files.Length; i++)

@@ -53,10 +53,12 @@
             this.ToolButtonSearch = new System.Windows.Forms.ToolStripButton();
             this.Status = new System.Windows.Forms.StatusStrip();
             this.LabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Spring = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LabelSel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainContainer = new System.Windows.Forms.SplitContainer();
             this.TreeFiles = new System.Windows.Forms.TreeView();
             this.TreeIcons = new System.Windows.Forms.ImageList(this.components);
-            this.TextEdit = new System.Windows.Forms.TextBox();
+            this.TextEdit = new LegaiaText.SyntaxRichTextBox();
             this.MenuMain.SuspendLayout();
             this.Tools.SuspendLayout();
             this.Status.SuspendLayout();
@@ -92,7 +94,7 @@
             // 
             this.MenuOpen.Name = "MenuOpen";
             this.MenuOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.MenuOpen.Size = new System.Drawing.Size(152, 22);
+            this.MenuOpen.Size = new System.Drawing.Size(146, 22);
             this.MenuOpen.Text = "&Open";
             this.MenuOpen.Click += new System.EventHandler(this.MenuOpen_Click);
             // 
@@ -100,19 +102,19 @@
             // 
             this.MenuSave.Name = "MenuSave";
             this.MenuSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.MenuSave.Size = new System.Drawing.Size(152, 22);
+            this.MenuSave.Size = new System.Drawing.Size(146, 22);
             this.MenuSave.Text = "&Save";
             this.MenuSave.Click += new System.EventHandler(this.MenuSave_Click);
             // 
             // Menu_0
             // 
             this.Menu_0.Name = "Menu_0";
-            this.Menu_0.Size = new System.Drawing.Size(149, 6);
+            this.Menu_0.Size = new System.Drawing.Size(143, 6);
             // 
             // MenuClose
             // 
             this.MenuClose.Name = "MenuClose";
-            this.MenuClose.Size = new System.Drawing.Size(152, 22);
+            this.MenuClose.Size = new System.Drawing.Size(146, 22);
             this.MenuClose.Text = "&Close";
             // 
             // MenuOptionsRoot
@@ -129,26 +131,26 @@
             // MenuExport
             // 
             this.MenuExport.Name = "MenuExport";
-            this.MenuExport.Size = new System.Drawing.Size(152, 22);
+            this.MenuExport.Size = new System.Drawing.Size(110, 22);
             this.MenuExport.Text = "&Export";
             this.MenuExport.Click += new System.EventHandler(this.MenuExport_Click);
             // 
             // MenuImport
             // 
             this.MenuImport.Name = "MenuImport";
-            this.MenuImport.Size = new System.Drawing.Size(152, 22);
+            this.MenuImport.Size = new System.Drawing.Size(110, 22);
             this.MenuImport.Text = "&Import";
             this.MenuImport.Click += new System.EventHandler(this.MenuImport_Click);
             // 
             // Menu_1
             // 
             this.Menu_1.Name = "Menu_1";
-            this.Menu_1.Size = new System.Drawing.Size(149, 6);
+            this.Menu_1.Size = new System.Drawing.Size(107, 6);
             // 
             // MenuSearch
             // 
             this.MenuSearch.Name = "MenuSearch";
-            this.MenuSearch.Size = new System.Drawing.Size(152, 22);
+            this.MenuSearch.Size = new System.Drawing.Size(110, 22);
             this.MenuSearch.Text = "&Search";
             this.MenuSearch.Click += new System.EventHandler(this.MenuSearch_Click);
             // 
@@ -163,7 +165,7 @@
             // MenuAbout
             // 
             this.MenuAbout.Name = "MenuAbout";
-            this.MenuAbout.Size = new System.Drawing.Size(152, 22);
+            this.MenuAbout.Size = new System.Drawing.Size(107, 22);
             this.MenuAbout.Text = "&About";
             this.MenuAbout.Click += new System.EventHandler(this.MenuAbout_Click);
             // 
@@ -180,9 +182,8 @@
             this.ToolButtonSearch});
             this.Tools.Location = new System.Drawing.Point(0, 24);
             this.Tools.Name = "Tools";
-            this.Tools.Size = new System.Drawing.Size(784, 52);
+            this.Tools.Size = new System.Drawing.Size(784, 38);
             this.Tools.TabIndex = 1;
-            this.Tools.Text = "toolStrip1";
             // 
             // ToolButtonOpen
             // 
@@ -191,7 +192,7 @@
             this.ToolButtonOpen.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolButtonOpen.Name = "ToolButtonOpen";
-            this.ToolButtonOpen.Size = new System.Drawing.Size(52, 49);
+            this.ToolButtonOpen.Size = new System.Drawing.Size(36, 35);
             this.ToolButtonOpen.Click += new System.EventHandler(this.ToolButtonOpen_Click);
             // 
             // ToolButtonSave
@@ -201,13 +202,13 @@
             this.ToolButtonSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolButtonSave.Name = "ToolButtonSave";
-            this.ToolButtonSave.Size = new System.Drawing.Size(52, 49);
+            this.ToolButtonSave.Size = new System.Drawing.Size(36, 35);
             this.ToolButtonSave.Click += new System.EventHandler(this.ToolButtonSave_Click);
             // 
             // Tool_0
             // 
             this.Tool_0.Name = "Tool_0";
-            this.Tool_0.Size = new System.Drawing.Size(6, 52);
+            this.Tool_0.Size = new System.Drawing.Size(6, 38);
             // 
             // ToolButtonExport
             // 
@@ -216,7 +217,7 @@
             this.ToolButtonExport.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolButtonExport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolButtonExport.Name = "ToolButtonExport";
-            this.ToolButtonExport.Size = new System.Drawing.Size(52, 49);
+            this.ToolButtonExport.Size = new System.Drawing.Size(36, 35);
             this.ToolButtonExport.Click += new System.EventHandler(this.ToolButtonExport_Click);
             // 
             // ToolButtonImport
@@ -226,13 +227,13 @@
             this.ToolButtonImport.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolButtonImport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolButtonImport.Name = "ToolButtonImport";
-            this.ToolButtonImport.Size = new System.Drawing.Size(52, 49);
+            this.ToolButtonImport.Size = new System.Drawing.Size(36, 35);
             this.ToolButtonImport.Click += new System.EventHandler(this.ToolButtonImport_Click);
             // 
             // Tool_1
             // 
             this.Tool_1.Name = "Tool_1";
-            this.Tool_1.Size = new System.Drawing.Size(6, 52);
+            this.Tool_1.Size = new System.Drawing.Size(6, 38);
             // 
             // ToolButtonSearch
             // 
@@ -241,13 +242,15 @@
             this.ToolButtonSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolButtonSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolButtonSearch.Name = "ToolButtonSearch";
-            this.ToolButtonSearch.Size = new System.Drawing.Size(52, 49);
+            this.ToolButtonSearch.Size = new System.Drawing.Size(36, 35);
             this.ToolButtonSearch.Click += new System.EventHandler(this.ToolButtonSearch_Click);
             // 
             // Status
             // 
             this.Status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LabelStatus});
+            this.LabelStatus,
+            this.Spring,
+            this.LabelSel});
             this.Status.Location = new System.Drawing.Point(0, 539);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(784, 22);
@@ -260,10 +263,23 @@
             this.LabelStatus.Size = new System.Drawing.Size(39, 17);
             this.LabelStatus.Text = "Ready";
             // 
+            // Spring
+            // 
+            this.Spring.Name = "Spring";
+            this.Spring.Size = new System.Drawing.Size(662, 17);
+            this.Spring.Spring = true;
+            // 
+            // LabelSel
+            // 
+            this.LabelSel.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSel.Name = "LabelSel";
+            this.LabelSel.Size = new System.Drawing.Size(68, 17);
+            this.LabelSel.Text = "SEL:    0";
+            // 
             // MainContainer
             // 
             this.MainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainContainer.Location = new System.Drawing.Point(0, 76);
+            this.MainContainer.Location = new System.Drawing.Point(0, 62);
             this.MainContainer.Name = "MainContainer";
             // 
             // MainContainer.Panel1
@@ -273,7 +289,7 @@
             // MainContainer.Panel2
             // 
             this.MainContainer.Panel2.Controls.Add(this.TextEdit);
-            this.MainContainer.Size = new System.Drawing.Size(784, 463);
+            this.MainContainer.Size = new System.Drawing.Size(784, 477);
             this.MainContainer.SplitterDistance = 261;
             this.MainContainer.TabIndex = 3;
             // 
@@ -287,7 +303,7 @@
             this.TreeFiles.Location = new System.Drawing.Point(0, 0);
             this.TreeFiles.Name = "TreeFiles";
             this.TreeFiles.SelectedImageIndex = 0;
-            this.TreeFiles.Size = new System.Drawing.Size(261, 463);
+            this.TreeFiles.Size = new System.Drawing.Size(261, 477);
             this.TreeFiles.TabIndex = 4;
             this.TreeFiles.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeFiles_AfterSelect);
             // 
@@ -302,14 +318,16 @@
             // TextEdit
             // 
             this.TextEdit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextEdit.DetectUrls = false;
             this.TextEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextEdit.Location = new System.Drawing.Point(0, 0);
-            this.TextEdit.Multiline = true;
             this.TextEdit.Name = "TextEdit";
-            this.TextEdit.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextEdit.Size = new System.Drawing.Size(519, 463);
+            this.TextEdit.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.TextEdit.Size = new System.Drawing.Size(519, 477);
             this.TextEdit.TabIndex = 0;
+            this.TextEdit.Text = "";
+            this.TextEdit.SelectionChanged += new System.EventHandler(this.TextEdit_SelectionChanged);
             this.TextEdit.TextChanged += new System.EventHandler(this.TextEdit_TextChanged);
             // 
             // FormMain
@@ -335,7 +353,6 @@
             this.Status.PerformLayout();
             this.MainContainer.Panel1.ResumeLayout(false);
             this.MainContainer.Panel2.ResumeLayout(false);
-            this.MainContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).EndInit();
             this.MainContainer.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -371,7 +388,9 @@
         private System.Windows.Forms.ToolStripSeparator Tool_1;
         private System.Windows.Forms.ToolStripButton ToolButtonSearch;
         private System.Windows.Forms.ToolStripStatusLabel LabelStatus;
-        private System.Windows.Forms.TextBox TextEdit;
+        private SyntaxRichTextBox TextEdit;
+        private System.Windows.Forms.ToolStripStatusLabel Spring;
+        private System.Windows.Forms.ToolStripStatusLabel LabelSel;
     }
 }
 
