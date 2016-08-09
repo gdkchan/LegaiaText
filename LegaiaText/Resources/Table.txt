@@ -2,6 +2,7 @@ C100={Vahn}
 C101={Noa}
 C102={Gala}
 C103={Terra}
+C163={Vahn Alt}
 C201={Ra-Seru Meta LV1}
 C202={Ra-Seru Meta LV2}
 C203={Ra-Seru Meta Lv3}

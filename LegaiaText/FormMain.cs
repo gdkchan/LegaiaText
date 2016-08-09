@@ -9,7 +9,7 @@ namespace LegaiaText
 {
     public partial class FormMain : Form
     {
-        const string Version = "0.2";
+        const string Version = "0.2.1";
 
         LProt Prot;
 
@@ -25,7 +25,7 @@ namespace LegaiaText
 
             TextEdit.ForeColor = Color.Silver;
 
-            TextEdit.AddHighlight(new HighlightParams("\\{TEXT\\}(.+?)\\{END\\}", Color.Black));
+            TextEdit.AddHighlight(new HighlightParams("{TEXT}((?:(?!\\\\x).(?!\\\\x))+?)??{END}", Color.Black));
             TextEdit.AddHighlight(new HighlightParams("(\\\\x[0-9A-Fa-f]{2})", Color.Gray));
 
             //Needs to do this cause this shit is screwed
